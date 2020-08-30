@@ -10,4 +10,4 @@ COPY . .
 
 #Expose port and start application
 EXPOSE 5000
-CMD [ "npm", "dev" ]
+CMD [ "npm", "run", "docker" ]

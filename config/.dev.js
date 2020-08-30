@@ -6,5 +6,6 @@ module.exports = {
 	stripePublishableKey: 
 	stripeSecretKey: 
 	sendGridKey: 
+	sendGridVerifiedEmail: 
 	redirectDomain: 
 };
