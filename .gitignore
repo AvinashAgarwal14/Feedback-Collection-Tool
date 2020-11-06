@@ -2,5 +2,6 @@ node_modules
 build
 dev.js
 sendgrid_webhook.js
+sendgrid_webhook.sh
 .env.development
 .env.production

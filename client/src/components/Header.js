@@ -9,21 +9,19 @@ class Header extends Component {
 			case null:
 				return;
 			case false:
-				return (
-					<li>
-						<a href="/auth/google">Login With Google</a>
-					</li>
-				);
+				return;
 			default:
 				return [
-					<li key="1">
-						<Payments />
+					<li className="nav-item" key="1">
+						<span className="navbar-text">
+							Credits: {this.props.auth.credits}
+						</span>
 					</li>,
-					<li key="2" style={{ margin: '0 10px' }}>
-						Credits: {this.props.auth.credits}
+					<li className="nav-item" key="2">
+						<Payments />						
 					</li>,
-					<li key="3">
-						<a href="/api/logout">Logout</a>
+					<li className="nav-item" key="3">
+						<a className="nav-link" href="/api/logout">Logout</a>
 					</li>
 				];
 		}
@@ -31,16 +29,14 @@ class Header extends Component {
 
 	render() {
 		return (
-			<nav>
-				<div className="nav-wrapper">
+			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 					<Link
 						to={this.props.auth ? '/surveys' : '/'}
-						className="left brand-logo"
+						className="navbar-brand"
 					>
 						Feedback Collector
 					</Link>
-					<ul className="right">{this.renderContent()}</ul>
-				</div>
+					<ul className="navbar-nav ml-auto">{this.renderContent()}</ul>
 			</nav>
 		);
 	}
