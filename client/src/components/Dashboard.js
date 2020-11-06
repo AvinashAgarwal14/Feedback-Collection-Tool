@@ -1,17 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Route} from 'react-router-dom'
 import SurveyList from './surveys/SurveyList';
+import { Container, Button, lightColors, darkColors} from "react-floating-action-button";
 
 const Dashboard = () => {
 	return (
+		<Route render={({ history}) => (
 		<div>
 			<SurveyList />
-			<div className="fixed-action-btn">
-				<Link to="/surveys/new" className="btn-floating btn-large red">
-					<i className="large material-icons">add</i>
-				</Link>
-			</div>
+			<Container>
+				<Button
+					tooltip="Send Survey"
+					icon="fa fa-plus"
+					rotate={true}
+					styles={{backgroundColor: darkColors.grey, color: lightColors.white}}
+					onClick={() => {history.push('/surveys/new')}}
+				/>
+			</Container>
 		</div>
+		)} />
 	);
 };
 
