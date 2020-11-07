@@ -10,6 +10,7 @@ class SurveyList extends Component {
 
 	renderSurveys() {
 		return this.props.surveys.reverse().map(survey => {
+			let datapoints = [survey['1'], survey['2'], survey['3'], survey['4'], survey['5']];
 			return (
 				<div className="card mb-3" key={survey._id}>
 					<div className="row no-gutters">
@@ -17,15 +18,11 @@ class SurveyList extends Component {
 							<div className="card-body">
 								<h5 className="card-title">{survey.title}</h5>
 								<p className="card-text">{survey.body}</p>
-								<p className="card-text">
-									<a>Yes: {survey.yes}</a>
-									<a>No: {survey.no}</a>
-								</p>
 								<p className="card-text"><small className="text-muted">Sent On: {new Date(survey.dateSent).toLocaleDateString()}</small></p>
 							</div>
 						</div>
 						<div className="col-md-4">
-							<FeedbackChart/>
+							<FeedbackChart datapoints = {datapoints}/>
 						</div>
 					</div>
 				</div>

@@ -16,7 +16,7 @@ class FeedbackChart extends Component {
                 labels: ['1', '2', '3', '4', '5'],
                 datasets: [{
                     label: '# of Votes',
-                    data: [12, 19, 3, 5, 2],
+                    data: this.props.datapoints,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
                         'rgba(54, 162, 235, 0.2)',
