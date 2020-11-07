@@ -24,15 +24,15 @@ class SurveyForm extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="jumbotron col-md-8" style={{margin:'auto'}}>
 				<form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
 					{this.renderFields()}
-					<Link to="/surveys" className="red btn-flat left white-text">
+					<Link to="/surveys" className="btn btn-danger float-left white-text">
 						Cancel
 					</Link>
-					<button type="submit" className="teal btn-flat right white-text">
+					<button type="submit" className="btn btn-success float-right white-text">
 						Next
-						<i className="material-icons right">done</i>
+						<i className="material-icons float-right">done</i>
 					</button>
 				</form>
 			</div>

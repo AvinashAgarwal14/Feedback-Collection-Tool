@@ -16,7 +16,8 @@ class SurveyList extends Component {
 					<div className="row no-gutters">
 						<div className="col-md-8">
 							<div className="card-body">
-								<h5 className="card-title">{survey.title}</h5>
+								<h4 className="card-title">{survey.title}</h4>
+								<h6 className="card-title">{survey.subject}</h6>
 								<p className="card-text">{survey.body}</p>
 								<p className="card-text"><small className="text-muted">Sent On: {new Date(survey.dateSent).toLocaleDateString()}</small></p>
 							</div>

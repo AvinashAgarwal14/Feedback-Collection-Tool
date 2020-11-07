@@ -3,7 +3,7 @@ import React from 'react';
 const Landing = () => {
 	return (
 		<div style={{ textAlign: 'center' }}>
-			<div class="jumbotron">
+			<div class="jumbotron" style={{height:'100vh'}}>
 				<h1 class="display-4">Feedback Collector</h1>
 				<p class="lead">Collect feedback from your users!</p>
 				<a class="btn btn-dark btn-lg" href="/auth/google">Login With Google</a>

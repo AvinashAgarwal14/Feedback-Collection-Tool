@@ -9,29 +9,29 @@ import { withRouter } from 'react-router-dom';
 const SurveyFormReview = props => {
 	const reviewFields = _.map(formFields, field => {
 		return (
-			<div key={field.name}>
+			<div className="form-group" key={field.name}>
 				<label>{field.label}</label>
-				<div>{props.formValues[field.name]}</div>
+				<input className="form-control col-md-8" style={{ marginBottom: '5px' }} value={props.formValues[field.name]} disabled/>
 			</div>
 		);
 	});
 
 	return (
-		<div>
+		<div className="jumbotron col-md-8" style={{margin:'auto'}}>
 			<h5>Please confirm your Entries:</h5>
-			<div>{reviewFields}</div>
+			<form>{reviewFields}</form>
 			<button
-				className="yellow darken-3 white-text btn-flat"
+				className="btn btn-danger float-left"
 				onClick={props.onCancel}
 			>
 				Back
 			</button>
 			<button
 				onClick={() => props.submitSurvey(props.formValues, props.history)}
-				className="green white-text btn-flat right"
+				className="btn btn-success float-right"
 			>
-				Send Survey
-				<i className="material-icons right">email</i>
+				Send Survey 
+				<i className="material-icons float-right">email</i>
 			</button>
 		</div>
 	);

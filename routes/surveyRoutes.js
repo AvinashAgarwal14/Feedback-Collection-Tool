@@ -1,5 +1,6 @@
 const _ = require('lodash');
-const Path = require('path-parser').default;
+const PathParser = require('path-parser').default;
+const path = require('path');
 const { URL } = require('url');
 const mongoose = require('mongoose');
 const requireLogin = require('../middlewares/requireLogin');
@@ -18,13 +19,12 @@ module.exports = app => {
 	});
 
 	app.get('/api/surveys/:surveyId/:choice', (req, res) => {
-		res.send('Thanks for voting!');
+		res.sendFile('thankyou.html',{ root: path.join(__dirname, '../services/emailTemplates') });
 	});
 
 	app.post('/api/surveys/webhooks', (req, res) => {
-		const p = new Path('/api/surveys/:surveyId/:choice');
+		const p = new PathParser('/api/surveys/:surveyId/:choice');
 
-		console.log('hey');
 		_.chain(req.body)
 			.map(event => {
 				const match = p.test(new URL(event.url).pathname);
